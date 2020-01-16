@@ -18,6 +18,7 @@
 
 .header-main .image-container .header-name:before {
     background-color: #00A3E1;
+    padding: 10px;
 }
 
 .page-heading h2 {
