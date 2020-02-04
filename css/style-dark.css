@@ -1659,6 +1659,13 @@ header .header-mobile .header-toggle i {
     letter-spacing: 1.5px;
 }
 
+.ajax-portfolio-popup .single-work a {
+    color: darkorange;
+    padding: 0px 10px;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 .ajax-portfolio-popup .single-work .information li {
     display: inline-block;
     margin: 0 20px;
