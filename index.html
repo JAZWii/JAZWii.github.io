@@ -1,836 +1,970 @@
 <!DOCTYPE html>
-<html lang="en" data-random-animation="false" data-animation="11">
-
+<html lang="en">
 <head>
-
-    <!--Meta Tags-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="Jawad Almarhoon's Portfolio" />
-    <meta name="description" content="Jawad Almarhoon's Portfolio" />
-    <meta name="author" content="cosmos-themes" />
-
-    <!--Page Title-->
-    <title>Jawad's Portfolio</title>
-
-    <!--Plugins Css-->
-    <link rel="stylesheet" href="css/plugins.css">
-    <!--Main Styles Css-->
-    <link rel="stylesheet" href="css/style-dark.css">
-    <!--Color Css-->
-    <link rel="stylesheet" href="css/blue-color.css">
-
-    <!--Modernizr Js-->
-    <script src="js/modernizr.js"></script>
-
-    <!--Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawad Al Marhoon - Technical Lead & CTO</title>
+    <link rel="icon" href="img/favicon.ico" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            margin: 10px 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            left: -24px;
+            top: 10px;
+        }
+        .skill-pill {
+            background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .hover-scale:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .proficiency-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-left: 4px solid #6366f1;
+        }
+        .proficiency-card:nth-child(2) {
+            border-left-color: #8b5cf6;
+        }
+        .proficiency-card:nth-child(3) {
+            border-left-color: #ec4899;
+        }
+        .proficiency-card:nth-child(4) {
+            border-left-color: #06b6d4;
+        }
+        .proficiency-card:nth-child(5) {
+            border-left-color: #10b981;
+        }
+        .proficiency-card:nth-child(6) {
+            border-left-color: #f59e0b;
+        }
+        .proficiency-card:nth-child(7) {
+            border-left-color: #ef4444;
+        }
+        .proficiency-card:nth-child(8) {
+            border-left-color: #84cc16;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .signature-img {
+            width: 100%;
+            max-width: 444px;
+            height: 91px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .domain-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border-left: 4px solid #06b6d4;
+            transition: all 0.3s ease;
+        }
+        .domain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .domain-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
-
-<body>
-
-    <!--Preloader Start-->
-    <div class="preloader">
-        <div class="loader">
-            <!--Your Name-->
-            <h4>Jawad Almarhoon</h4>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    <!--Preloader End-->
-
-    <div id="page">
-
-        <!--Header Start-->
-        <header>
-            <div class="header-content">
-
-                <!--Mobile Header-->
-                <div class="header-mobile">
-                    <a class="header-toggle"><i class="fas fa-bars"></i></a>
-                    <h2>Jawad Almarhoon</h2>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-md shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">J</span>
+                    </div>
+                    <span class="ml-3 text-xl font-bold text-gray-800">Jawad Al Marhoon</span>
                 </div>
-
-                <!--Main Header-->
-                <div class="header-main" data-simplebar>
-                    <div class="image-container">
-                        <h2 class="header-name">Jawad Almarhoon</h2>
-                        <img src="img/profile-img.jpg" alt="profile-pic">
-                    </div>
-
-                    <!--Nav Menus-->
-                    <nav class="nav-menu">
-                        <ul>
-                            <li><a href="#home" class="pt-link active"><span class="nav-menu-icon"><i class="lnr lnr-home"></i></span>Home </a> </li>
-                            <li><a href="#about" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-user"></i></span>About Me</a></li>
-                            <li><a href="#resume" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-license"></i></span>Resume</a></li>
-                            <li><a href="#portfolio" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-briefcase"></i></span>Portfolio</a></li>
-                            <li><a href="#contact" class="pt-link"><span class="nav-menu-icon"><i class="lnr lnr-envelope"></i></span>Contact</a></li>
-                        </ul>
-                    </nav>
-
-                    <!--Nav Footer-->
-                    <div class="nav-footer">
-                        <!--Social Links-->
-                        <ul class="social">
-                            <li><a href="https://www.facebook.com/jawad.a.almarhoon" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-                            <li><a href="https://twitter.com/JAZ_Wii" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/jawad-a-almarhoon/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="https://www.xing.com/profile/Jawad_Almarhoon/cv" target="_blank"><i class="fab fa-xing-square"></i></a></li>
-                            <li><a href="https://github.com/JAZWii" target="_blank"><i class="fab fa-github-square"></i></a></li>
-                        </ul>
-                        <!--Copyright Text-->
-                        <div class="copy">
-                            <p>2018 &copy; Cosmos-Themes.<br>All Right Reserved.</p>
-                        </div>
-                    </div>
-
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vision" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Vision</a>
+                    <a href="#experience" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Experience</a>
+                    <a href="#projects" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Projects</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Contact</a>
+                    <a href="Jawad_Resume_Technical_Lead.pdf" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all">Download CV</a>
                 </div>
             </div>
-        </header>
-        <!--Header End-->
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
+                <div class="text-center md:text-left mb-8 md:mb-0 md:mr-8">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        <span class="gradient-text">Jawad Al Marhoon</span>
+                    </h1>
+                    <p class="text-2xl md:text-3xl text-gray-700 mb-4 font-medium">Technical Lead & Acting CTO</p>
+                    <p class="text-xl text-gray-600 mb-8 max-w-3xl">Driving digital transformation through innovative technology solutions and strategic leadership in cloud architecture, DevOps, and software engineering</p>
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm md:text-base">
+                        <div class="bg-white px-6 py-3 rounded-lg shadow-md">
+                            <i class="fas fa-cloud text-purple-600 mr-2"></i>
+                            <span class="font-medium">Cloud Architecture</span>
+                        </div>
+                        <div class="bg-white px-6 py-3 rounded-lg shadow-md">
+                            <i class="fas fa-rocket text-pink-600 mr-2"></i>
+                            <span class="font-medium">DevOps & CI/CD</span>
+                        </div>
+                        <div class="bg-white px-6 py-3 rounded-lg shadow-md">
+                            <i class="fas fa-project-diagram text-blue-600 mr-2"></i>
+                            <span class="font-medium">Digital Transformation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="img/profile-img.jpeg" alt="Jawad Al Marhoon" class="profile-img rounded-full">
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <!--Main Start-->
-        <div id="main" class="site-main">
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">My Vision</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto">As a Technical Lead and Acting CTO, my vision is to bridge the gap between business objectives and technological innovation by creating scalable, secure, and efficient digital solutions that drive organizational growth and transformation.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl hover-scale">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Strategic Leadership</h3>
+                    <p class="text-gray-700">I believe in leading with a strategic mindset, aligning technology initiatives with business goals to deliver measurable value and drive digital transformation across organizations.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl hover-scale">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-sync-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Continuous Innovation</h3>
+                    <p class="text-gray-700">Embracing cutting-edge technologies and methodologies like DevOps, cloud-native architectures, and automation to enhance efficiency, reduce time-to-market, and improve product quality.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-xl hover-scale">
+                    <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-teal-500 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Team Empowerment</h3>
+                    <p class="text-gray-700">Building high-performing technical teams through mentorship, knowledge sharing, and creating an environment that fosters collaboration, innovation, and professional growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <!--Banner Section Start-->
-            <section id="home" class="banner-section pt-page" style="background-image: url('img/background/home-bg.jpg')">
-
-                <div id="particles-js"></div>
-
-                <div class="banner-content">
-                    <!--Banner Text-->
-                    <h1 class="mb-20">Jawad <span>Almarhoon</span></h1>
-
-                    <!--Animated Text-->
-                    <p class="cd-headline clip is-full-width">
-                        <span>I am a </span>
-                        <span class="cd-words-wrapper">
-                            <b class="is-visible">DevOps Lead</b>
-                            <b>Game Developer</b>
-                            <b>infrastructure & Solution Architecture</b>
-                        </span>
-                    </p>
-
+    <!-- Industry Domains Section -->
+    <section id="domains" class="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Industry Expertise</h2>
+                <p class="text-xl text-gray-600">Extensive experience across multiple business domains, delivering technology solutions that address specific industry challenges</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Banking & Financial -->
+                <div class="domain-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="domain-icon mr-4">
+                            <i class="fas fa-university text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Banking & Financial</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Led digital transformation initiatives at BSF, implementing omnichannel solutions, customer loyalty programs, and secure financial platforms with compliance to regulatory standards.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Omnichannel</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Customer Loyalty</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Regulatory Compliance</span>
+                    </div>
                 </div>
 
-            </section>
-            <!--Banner Section End-->
-
-
-            <!--About Section Start-->
-            <section id="about" class="about-section pt-page">
-                <div class="section-container">
-                    <!--Page Heading-->
-                    <div class="page-heading">
-                        <span class="icon"><i class="lnr lnr-user"></i></span>
-                        <h2>About Me.</h2>
+                <!-- Logistics & Transportation -->
+                <div class="domain-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="domain-icon mr-4">
+                            <i class="fas fa-truck text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Logistics & Transportation</h3>
                     </div>
-
-                    <!-- About Info Row Start-->
-                    <div class="row about mb-70">
-
-                        <div class="col-lg-8">
-                            <!--Personal Intro-->
-                            <h3 class="mb-20">DevOps Lead</h3>
-                            <p>I’m a developer geek that you will be happy to add him in your contacts!
-                                <br>I am a DevOps Lead with over 7 years of experience in the technology industry. I have a passion for building and automating solutions that improve the speed, reliability, and security of software delivery. I am also a strong advocate for continuous improvement and I am always looking for new ways to improve the way we work.</p>
-
-                            <p>I have a Bachelor of Science degree in Software Engineering from the KFUPM. I have worked in a variety of industries, including gas & oil, construction, and banking sector. I have a strong understanding of the software development life cycle and I am proficient in a variety of technologies, including:
-
-                            <p>Been doing projects for learning in:
-                                <br>Mobile Application: Android (Java & Kotlin), Xamarin, React Native & Flutter.
-                                <br>Web Application: Angular.
-                                <br>API: Java Spring RESTful, .NET Core.
-                                <br>Gaming: Unity 3D, Unreal Engine.
-                                <br>IDE: Visual Studio & IntelliJ.
-                                <br>Databases: MySQL, SQL Server, Oracle & PostgreSQL
-                                <br>Cloud Computing Services: AWS, OCI & OpenShift.
-                                <br>DevOps Tools: Jenkins, Nexus, GitLab, K8s
-                                <br>Text Editor: Atom, Brackets & Visual Studio Code.
-                                <br>Operating System: Windows, Linux & Mac.</p>
-
-                                <p>I am a strong leader and I am able to motivate and inspire my team to achieve great things. I am also a great communicator and I am able to clearly articulate my vision and goals. I am confident that I can lead a team of DevOps engineers to success.
-                                <br>I am always looking for new ways to learn and I am confident that I can quickly learn new technologies. I am also a strong communicator and I am able to work effectively with both technical and non-technical audiences.</p>
-                                <br>I offer strong technical skillset as well as analytical and performance-driven approach, with excellent teamwork and communication capabilities!</p>
-
-                            <!--Signature Image-->
-                            <div class="signature mt-20">
-                                <img src="img/signature-white.png" alt="">
-                            </div>
-                        </div>
-
-                        <!--Personal Info-->
-                        <div class="col-lg-4">
-                            <div class="about-info">
-                                <h3 class="mb-20">Personal Information</h3>
-                                <ul>
-                                    <li><span class="title">Name</span><span class="value">Jawad Almarhoon</span></li>
-                                    <li><span class="title">Birthdate</span><span class="value">27/May/1993</span></li>
-                                    <li><span class="title">Residence</span><span class="value">Qatif, Saudi Arabia</span></li>
-                                    <li><span class="title">Email</span><span class="value">jawad.a.almarhoon@gmail.com</span></li>
-                                    <li><span class="title">Phone</span><span class="value">(+966) 50 386 8474</span></li>
-                                    <li><span class="title">New Opportunities</span><span class="value">Available</span></li>
-                                </ul>
-                                <div class="resume-button mt-30">
-                                    <a class="btn-main" href="Jawad_Resume_Technical_Lead.pdf" target="_blank">Download Resume</a>
-                                </div>
-                                <div class="resume-button mt-30">
-                                    <a class="btn-main" href="https://www.linkedin.com/in/jawad-a-almarhoon/" target="_blank">LinkedIn Profile</a>
-                                </div>
-                                <div class="resume-button mt-30">
-                                    <a class="btn-main" href="https://github.com/JAZWii" target="_blank">Github Profile</a>
-                                </div>
-                            </div>
-                        </div>
+                    <p class="text-gray-700 mb-4">As Technical Lead at CAMION, overseeing transportation and supply chain technology solutions, optimizing delivery operations and integrating with governmental systems.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Supply Chain</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Delivery Optimization</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">S2S VPN Integration</span>
                     </div>
-                    <!-- About Info Row End-->
-
-                    <!--Services Row Start-->
-                    <div class="row services mb-30">
-                        <div class="col-md-12">
-                            <div class="subheading">
-                                <h3>Development </h3>
-                            </div>
-                        </div>
-
-                        <!--Service Item-->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item">
-                                <div class="icon"><i class="lnr lnr-laptop"></i></div>
-                                <h4>Unity Development</h4>
-                                <p>Developed small games on Unity using C# and Objects.</p>
-                            </div>
-                        </div>
-
-                        <!--Service Item-->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item">
-                                <div class="icon"><i class="lnr lnr-smartphone"></i></div>
-                                <h4>Flutter Design</h4>
-                                <p>Designed and Created Mobile Applications using Flutter on Both iOS and Android.</p>
-                            </div>
-                        </div>
-
-                        <!--Service Item-->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item">
-                                <div class="icon"><i class="lnr lnr-laptop-phone"></i></div>
-                                <h4>Anuglar Development</h4>
-                                <p>Made Beautiful Websites for Customers and Personal Use using HTML, TypeScript, SCSS and Type and designed them to work on both Desktop and Mobile Browsers.</p>
-                            </div>
-                        </div>
-
-                        <!--Service Item-->
-                        <div class="col-lg-3 col-sm-6">
-                            <div class="service-item">
-                                <div class="icon"><i class="lnr lnr-database"></i></div>
-                                <h4>Back-End Development</h4>
-                                <p>Created Solid Backend Structures like APIs and Databases with Java, .NET and NodeJS.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Services Row End-->
                 </div>
-            </section>
-            <!--About Section Start-->
 
-
-            <!--Resume Section Start-->
-            <section id="resume" class="resume-section pt-page">
-                <div class="section-container">
-                    <div class="page-heading">
-                        <span class="icon"><i class="lnr lnr-license"></i></span>
-                        <h2>My Resume.</h2>
+                <!-- Petroleum & Natural Gas -->
+                <div class="domain-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="domain-icon mr-4">
+                            <i class="fas fa-industry text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Petroleum & Natural Gas</h3>
                     </div>
-
-                    <!--Education & Experience Row Start-->
-                    <div class="row mb-20">
-
-                        <!--Experience Column Start-->
-                        <div class="col-lg-6">
-                            <div class="subheading">
-                                <h3>Experience</h3>
-                            </div>
-                            <ul class="experience">
-
-                                <!--Experience Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>DevOps Lead</h4>
-                                        <h5>Banque Saudi Fransi, Riyadh, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Leading the integration in the Omnichannel Project. Monitor and refine the infrastructure and network of the OCI. Applying CI/CD pipelines for code deployment using Jenkins and Nexus coordinated with GitLab through all the development environments. Managed local deployments and releases in OpenShift and Kubernetes on-prem Linux Red Hat servers. Working and following Scrum way with the squads using Jira for tasks and Confluence for documenting.                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">Current</span>
-                                        <span class="from" align="right">August 2022</span>
-                                    </span>
-                                </li>
-
-                                <!--Experience Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>Digital Channels Development Lead</h4>
-                                        <h5>Banque Saudi Fransi, Riyadh, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Responsible of monitoring and fixing the digital content focused on the public website using Content Management System (CMS) including their services and their workflows. Managing the content transferring for the Intranet and improving the usability of its services. Keeping the IR’s (Investor Relation) data updated and well implemented in the public website. Handing the vulnerabilities related to the website and it is services in addition to FransiPlus and FransiMobile using Spring Boot Java and Angular. Managing and enhancing Jana the loyalty program to meet the customers’ needs. Initiated and leading the projects of Revamping of the public website and internal website in addition to Email Marketing.                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">July 2022</span>
-                                        <span class="from" align="right">December 2020</span>
-                                    </span>
-                                </li>
-                                
-                                <!--Experience Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>Sr. Software Engineer</h4>
-                                        <h5>Tech Mahindra, Al-Khobar, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Responsible for the development of a desktop application to act as an interface for a project that automates the process of generating and storing plant material waste solution using .NET and WPF integrated with SAP for Saudi Aramco Company following Agile software programming methodology, in addition to creating a host for monitoring printers using Spring Boot Java.
-                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">December 2020</span>
-                                        <span class="from" align="right">August 2020</span>
-                                    </span>
-                                </li>
-                                
-                                <!--Experience Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>Full Stack Software Developer</h4>
-                                        <h5>Reservoir Technologies, Dammam, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Responsible for the development of a system for one of the company's key clients, using VB, C#, MVC, Spring Boot (RESTful API), and SQL Server 2012 R2 database in addition to using automation to develop test cases to make sure the system is functioning correctly. Created and successfully launched website using Angular. Debug, test, and fix as well as develop system, adding new features improving operability and effectiveness. Administer system database. Continually improve UI and performance across applications.
-                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">July 2020</span>
-                                        <span class="from" align="right">May 2017</span>
-                                    </span>
-                                </li>
-
-                                <!--Experience Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>Full Stack Software Developer</h4>
-                                        <h5>Themar AlMarifah, Qatif, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Provided technical support for clients’ systems and networks from infrastructure perspective. Co-created iOS and android-based website solutions. Developed customized programs, including Themar EServices application created from concept to successful delivery, using Xamarin framework, Android and iOS, Entity Framework (API), Microsoft Azure, and SQL Server 2012 database. Added additional features to existing solutions, including several POS programs for small business sector clients. Presented demo versions of products and offerings to critical company customer, Al Abdulkarim Holding Company.
-                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">February 2017</span>
-                                        <span class="from" align="right">September 2016</span>
-                                    </span>
-                                </li>
-
-                                <!--Experience Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>K2 Developer (Internship)</h4>
-                                        <h5>Zamil Industrial, Dammam, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Facilitated transition from Adobe LiveCycle to K2, process support system, internally across company. Supported software development for K2, streamlining internal processes and procedures for accounts, fund management, customer registration and loan verification processes. Created and developed forms with accompanying workflows (integration with SQL Server), heavily supporting IT engineering and HR departments.
-                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">August 2016</span>
-                                        <span class="from" align="right">July 2016</span>
-                                    </span>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!--Experience Column End-->
-
-                        <!--Education Column Start-->
-                        <div class="col-lg-6">
-                            <div class="subheading">
-                                <h3>Education</h3>
-                            </div>
-
-                            <ul class="education">
-
-                                <!--Education Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>Introduction to Machine Learning with TensorFlow - Connect Nanodegree Program</h4>
-                                        <h5>Misk Academy (Udacity)</h5>
-                                        <p class="info">
-                                            Coursework included: Supervised Learning, Deep Learning, Unsupervised Learning
-                                            Projects included: Finding Donors for CharityML, Image Classifier with Deep Learning, Identify Customer Segments
-                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">July 2020</span>
-                                        <span class="from" align="right">April 2020</span>
-                                    </span>
-                                </li>
-                                
-                                <!--Education Item-->
-                                <li>
-                                    <span class="line-left"></span>
-                                    <div class="content">
-                                        <h4>Bachelor of Science in Software Engineering</h4>
-                                        <h5>King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia</h5>
-                                        <p class="info">
-                                            Coursework included: Software Design and Architecture, Software Project Management, User Interface Design, Software Testing and Quality Assurance, Internet Protocols and Client-Server Programming, Web Engineering and Development, Principles of Software Engineering
-                                        </p>
-                                    </div>
-                                    <span class="year">
-                                        <span class="to" align="right">January 2017</span>
-                                        <span class="from" align="right">August 2011</span>
-                                    </span>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!--Education Column End-->
-
+                    <p class="text-gray-700 mb-4">Developed custom systems for reservoir engineering and geological development at Reservoir Technologies, serving the petroleum and natural gas industry with specialized software solutions.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Reservoir Engineering</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Geological Development</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Custom Systems</span>
                     </div>
-                    <!--Education & Experience Row End-->
-
-
-                    <!--Skills Row Start-->
-                    <div class="row">
-
-                        <!--Design Skills Column Start-->
-                        <div class="col-lg-4 skills">
-                            <div class="subheading">
-                                <h3>Frameworks Skills</h3>
-                            </div>
-
-                            <!--Design Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">Unity3D</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="65">
-                                        <div class="progress-value">65%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Design Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">Flutter</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="55">
-                                        <div class="progress-value">55%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Design Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">Angular</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="50">
-                                        <div class="progress-value">50%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Design Skills Column End-->
-
-                        <!--Coding Skills Column Start-->
-                        <div class="col-lg-4 skills">
-                            <div class="subheading">
-                                <h3>Coding Skills</h3>
-                            </div>
-
-                            <!--Coding Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">Java</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="85">
-                                        <div class="progress-value">85%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Coding Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">C#</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="80">
-                                        <div class="progress-value">80%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Coding Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">Javascript</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="55">
-                                        <div class="progress-value">55%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--Coding Skills Column End-->
-
-                        <!--Coding Skills Column Start-->
-                        <div class="col-lg-4 skills">
-                            <div class="subheading">
-                                <h3>tools Skills</h3>
-                            </div>
-
-                            <!--Coding Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">MySQL</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="85">
-                                        <div class="progress-value">85%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Coding Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">IntelliJ IDE</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="80">
-                                        <div class="progress-value">80%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--Coding Skill Item-->
-                            <div class="skill-item">
-                                <h4 class="progress-title">jenkins</h4>
-                                <div class="progress">
-                                    <div class="progress-bar" data-progress-value="45">
-                                        <div class="progress-value">45%</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--Coding Skills Column End-->
-                    </div>
-                    <!--Skills Row End-->
                 </div>
-            </section>
-            <!--Resume Section End-->
 
-
-            <!--Porfolio Section Start-->
-            <section id="portfolio" class="portfolio-section pt-page">
-                <div class="section-container">
-
-                    <!--Page Heading-->
-                    <div class="page-heading">
-                        <span class="icon"><i class="lnr lnr-briefcase"></i></span>
-                        <h2>Portfolio.</h2>
+                <!-- Point of Sale & Retail -->
+                <div class="domain-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="domain-icon mr-4">
+                            <i class="fas fa-cash-register text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Point of Sale & Retail</h3>
                     </div>
+                    <p class="text-gray-700 mb-4">Enhanced and customized POS programs for small business clients at Themar AlMarifah, improving functionality and user experience for retail operations.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">POS Systems</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Retail Solutions</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Client Engagement</span>
+                    </div>
+                </div>
 
-                    <div class="row">
-                        <!--Portfolio Filter-->
-                        <div class="col-md-12 portfolio-filter text-center">
-                            <ul>
-                                <li class="active" data-filter="*">All</li>
-                                <li data-filter=".unity">Unity</li>
-                                <li data-filter=".frontend">Front-End</li>
-                                <li data-filter=".backend">Back-End</li>
+                <!-- Construction & Engineering -->
+                <div class="domain-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="domain-icon mr-4">
+                            <i class="fas fa-hard-hat text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Construction & Engineering</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Supported software development for K2 process support system at Zamil Industrial Investment Company, automating processes for accounts, fund management, and customer registration in the construction industry.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Process Automation</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Workflow Integration</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Engineering Solutions</span>
+                    </div>
+                </div>
+
+                <!-- Technology & Software -->
+                <div class="domain-card p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="domain-icon mr-4">
+                            <i class="fas fa-laptop-code text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Technology & Software</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Extensive experience across full-stack development, cloud architecture, DevOps, and mobile applications, delivering innovative software solutions for diverse clients and industries.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Full-Stack Development</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Cloud Architecture</span>
+                        <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Mobile Applications</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Professional Journey</h2>
+                <p class="text-xl text-gray-600">A decade of experience driving technology innovation across banking, logistics, and software development sectors</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <!-- Education -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <i class="fas fa-graduation-cap text-purple-600 mr-3"></i>
+                        Education
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-lg">Master of High Performance and Cloud Computing</h4>
+                            <p class="text-purple-600 font-medium">King Fahd University of Petroleum and Minerals</p>
+                            <p class="text-gray-600 text-sm">Current</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Bachelor of Science in Software Engineering</h4>
+                            <p class="text-purple-600 font-medium">King Fahd University of Petroleum and Minerals</p>
+                            <p class="text-gray-600 text-sm">2017</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <i class="fas fa-certificate text-purple-600 mr-3"></i>
+                        Certifications
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Project Management Professional (PMP)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">TOGAF® Enterprise Architecture</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Google Cloud Professional Architect</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Certified Scrum Master</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">OCI Certified Architect Associate</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">DevOps Fundamentals</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <i class="fas fa-code text-purple-600 mr-3"></i>
+                        Technical Expertise
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Cloud Platforms</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">OCI</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">Azure</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">GCP</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">DevOps & CI/CD</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">Jenkins</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">GitLab</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">ArgoCD</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">Java</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">C#</span>
+                                <span class="skill-pill px-3 py-1 rounded-full text-sm">Angular</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Proficiencies -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+                <h3 class="text-2xl font-bold mb-8 text-gray-800 flex items-center">
+                    <i class="fas fa-laptop-code text-purple-600 mr-3"></i>
+                    Technical Proficiencies
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-cloud mr-2"></i>
+                            Cloud Platforms
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">OCI</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Azure</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">AWS</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Google Cloud</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">DigitalOcean</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-rocket mr-2"></i>
+                            DevOps Tools
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Jenkins</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Nexus</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">GitLab</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">ArgoCD</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">GitOps</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Kubernetes</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">OpenShift</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Docker</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">GitHub Actions</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-code mr-2"></i>
+                            Programming Languages
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Java</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">C#</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">VB</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">.NET</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Spring Boot</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">JavaScript</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">SQL</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Python</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-mobile-alt mr-2"></i>
+                            Web & Mobile Development
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Xamarin</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Entity Framework</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Angular</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">React</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">HTML</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">CSS</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Flutter</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-database mr-2"></i>
+                            Database Management
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">SQL Server</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">MySQL</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Oracle DB</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">PostgreSQL</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">MongoDB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-project-diagram mr-2"></i>
+                            CI/CD & Automation
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">CI/CD Pipelines</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Automated Testing</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Continuous Integration</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Continuous Delivery</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-tasks mr-2"></i>
+                            Project Management Tools
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Jira</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Confluence</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Microsoft Project</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Trello</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Zenkit</span>
+                        </div>
+                    </div>
+                    
+                    <div class="proficiency-card p-6 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-server mr-2"></i>
+                            Operating Systems
+                        </h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Linux (Red Hat)</span>
+                            <span class="bg-white px-3 py-1 rounded-full text-sm shadow-sm">Windows</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Career Timeline -->
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h3 class="text-2xl font-bold mb-8 text-gray-800 flex items-center">
+                    <i class="fas fa-briefcase text-purple-600 mr-3"></i>
+                    Professional Experience
+                </h3>
+                
+                <div class="space-y-8 relative">
+                    <!-- CAMION -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-purple-300 last:border-l-0 last:pb-0">
+                        <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">Technical Lead – Acting CTO</h4>
+                                <span class="text-purple-600 font-semibold">CAMION, Al-Khobar</span>
+                            </div>
+                            <p class="text-gray-600 font-medium mb-3">Oct 2024 – Present</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-purple-500 mr-2 mt-1 text-xs"></i> Building and managing high-performing technical teams across development, support, and production</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-purple-500 mr-2 mt-1 text-xs"></i> Leading cloud infrastructure management on OCI with focus on scalability and security</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-purple-500 mr-2 mt-1 text-xs"></i> Overseeing security management including IAM, WAF, DR, and network security</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-purple-500 mr-2 mt-1 text-xs"></i> Supervising integration with governmental and third-party services via S2S VPN connections</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-purple-500 mr-2 mt-1 text-xs"></i> Ensuring all delivered services meet business requirements and comply with regulatory standards</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!--Portfolio Items-->
-                    <div class="row portfolio-items mb-50">
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 backend">
-                            <a class="ajax-link" href="password_cloud_backend.html">
-                                <figure>
-                                    <img src="img/portfolio/spring-framework.png" alt="">
-                                    <figcaption>
-                                        <h4>Password Cloud Back-End</h4>
-                                        <p>Back-End</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 frontend">
-                            <a class="ajax-link" href="password_cloud.html">
-                                <figure>
-                                    <img src="img/portfolio/flutter.png" alt="">
-                                    <figcaption>
-                                        <h4>Password Cloud</h4>
-                                        <p>Front-End</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 backend">
-                            <a class="ajax-link" href="betrayal.html">
-                                <figure>
-                                    <img src="img/portfolio/java.png" alt="">
-                                    <figcaption>
-                                        <h4>Betrayal at House on the Hill - The Board Game</h4>
-                                        <p>Back-End</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 frontend">
-                            <a class="ajax-link" href="board_games_q_store.html">
-                                <figure>
-                                    <img src="img/portfolio/angular.png" alt="">
-                                    <figcaption>
-                                        <h4>Board Games Q Store</h4>
-                                        <p>Full Stack</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 unity">
-                            <a class="ajax-link" href="karting_microgame.html">
-                                <figure>
-                                    <img src="img/portfolio/unity.png" alt="">
-                                    <figcaption>
-                                        <h4>Karting Microgame</h4>
-                                        <p>Unity</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 frontend">
-                            <a class="ajax-link" href="expense_manager.html">
-                                <figure>
-                                    <img src="img/portfolio/flutter.png" alt="">
-                                    <figcaption>
-                                        <h4>Expense Manager App</h4>
-                                        <p>Front-End</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 backend">
-                            <a class="ajax-link" href="point_of_sales_backend.html">
-                                <figure>
-                                    <img src="img/portfolio/spring-framework.png" alt="">
-                                    <figcaption>
-                                        <h4>Point of Sales Back-End</h4>
-                                        <p>Back-End</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 unity">
-                            <a class="ajax-link" href="2d_platformer_microgame.html">
-                                <figure>
-                                    <img src="img/portfolio/unity.png" alt="">
-                                    <figcaption>
-                                        <h4>2D Platformer Microgame</h4>
-                                        <p>Unity</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 unity">
-                            <a class="ajax-link" href="fps_microgame.html">
-                                <figure>
-                                    <img src="img/portfolio/unity.png" alt="">
-                                    <figcaption>
-                                        <h4>FPS Microgame</h4>
-                                        <p>Unity</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 backend">
-                            <a class="ajax-link" href="captain_sonar.html">
-                                <figure>
-                                    <img src="img/portfolio/kotlin.png" alt="">
-                                    <figcaption>
-                                        <h4>Captain Sonar</h4>
-                                        <p>Back-End</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                        <!--Portfolio Item-->
-                        <div class="item col-lg-4 col-sm-6 unity">
-                            <a class="ajax-link" href="spaceship_2d.html">
-                                <figure>
-                                    <img src="img/portfolio/unity.png" alt="">
-                                    <figcaption>
-                                        <h4>SpaceShip 2D</h4>
-                                        <p>Unity</p>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <!--Porfolio Section End-->
-
-            <!--Contact Section Start-->
-            <section id="contact" class="contact-section pt-page">
-                <div class="section-container">
-
-                    <!--Page Heading-->
-                    <div class="page-heading">
-                        <span class="icon"><i class="lnr lnr-envelope"></i></span>
-                        <h2>Contact Me.</h2>
-                    </div>
-
-                    <!--Form Row-->
-                    <div class="row mb-70">
-                        <div class="col-lg-8  offset-lg-2">
-                            <div class="subheading">
-                                <h3>Let's Talk</h3>
+                    <!-- BSF Digital Transformation Lead -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-blue-300">
+                        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">Digital Transformation Lead</h4>
+                                <span class="text-blue-600 font-semibold">BSF, Riyadh</span>
                             </div>
-
-                            <!--Form Start-->
-                            <form id="contact-form" method="post" action="mail.php">
-                                <div class="row">
-
-
-                                    <!--Name Field-->
-                                    <div class="col-md-6 mb-50">
-                                        <span class="input">
-                                            <input class="input__field cf-validate" type="text" id="cf-name" name="name" />
-                                            <label class="input__label" for="cf-name">Name</label>
-                                        </span>
-                                    </div>
-
-                                    <!--Email Field-->
-                                    <div class="col-md-6 mb-50">
-                                        <span class="input">
-                                            <input class="input__field cf-validate" type="text" id="cf-email" name="email" />
-                                            <label class="input__label" for="cf-email">Email</label>
-                                        </span>
-                                    </div>
-
-                                    <!--Message Box-->
-                                    <div class="col-md-12 mb-30">
-                                        <span class="input">
-                                            <textarea class="input__field cf-validate" id="cf-message" name="message" rows="5"></textarea>
-                                            <label class="input__label" for="cf-message">How can we help you?</label>
-                                        </span>
-                                    </div>
-
-                                    <div class="alert-container col-md-12"></div>
-
-                                    <!--Submit Button-->
-                                    <div class="col-md-12 text-center">
-                                        <button id="cf-submit" class="btn-main">Send Message</button>
-                                    </div>
-
-
-                                </div>
-                            </form>
-                            <!--Form End-->
-
+                            <p class="text-gray-600 font-medium mb-3">Aug 2022 – Aug 2024</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-blue-500 mr-2 mt-1 text-xs"></i> Spearheaded Omnichannel Project integration using Agile methodologies</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-blue-500 mr-2 mt-1 text-xs"></i> Implemented CI/CD pipelines with Jenkins, Nexus, GitLab, and ArgoCD</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-blue-500 mr-2 mt-1 text-xs"></i> Managed deployments in OpenShift and Kubernetes on Red Hat Linux servers</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-blue-500 mr-2 mt-1 text-xs"></i> Led Scrum practices using Jira and Confluence for iterative delivery</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-blue-500 mr-2 mt-1 text-xs"></i> Implemented security tools, backup protocols, and monitoring systems</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!--Contact Info Row Start-->
-                    <div class="row contact-info mb-70">
-
-                        <!--Contact Info Item-->
-                        <div class="col-md-4 info-item">
-                            <span class="icon"><i class="fas fa-paper-plane"></i></span>
-                            <h5><a href="mailto:example@example.com">jawad.a.almarhoon@gmail.com</a></h5>
+                    <!-- BSF Digital Channels Development Lead -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-green-300">
+                        <div class="absolute w-4 h-4 bg-green-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">Digital Channels Development Lead</h4>
+                                <span class="text-green-600 font-semibold">BSF, Riyadh</span>
+                            </div>
+                            <p class="text-gray-600 font-medium mb-3">Dec 2020 – Jul 2022</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-green-500 mr-2 mt-1 text-xs"></i> Led Waterfall projects with structured, phased implementation</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-green-500 mr-2 mt-1 text-xs"></i> Managed digital content on public websites using CMS</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-green-500 mr-2 mt-1 text-xs"></i> Enhanced Jana loyalty program and led website revamp projects</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-green-500 mr-2 mt-1 text-xs"></i> Handled vulnerabilities in digital platforms using Spring Boot and Angular</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-green-500 mr-2 mt-1 text-xs"></i> Initiated and led projects to revamp public and internal websites</li>
+                            </ul>
                         </div>
-
-                        <!--Contact Info Item-->
-                        <div class="col-md-4 info-item">
-                            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-                            <h5>Qatif, Saudi Arabia</h5>
-                        </div>
-
-                        <!--Contact Info Item-->
-                        <div class="col-md-4 info-item">
-                            <span class="icon"><i class="fas fa-phone"></i></span>
-                            <h5>(+966) 50 386 8474</h5>
-                        </div>
-
                     </div>
-                    <!--Contact Info Row End-->
 
+                    <!-- Tech Mahindra -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-orange-300">
+                        <div class="absolute w-4 h-4 bg-orange-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">Sr. Software Engineer</h4>
+                                <span class="text-orange-600 font-semibold">Tech Mahindra, Al-Khobar</span>
+                            </div>
+                            <p class="text-gray-600 font-medium mb-3">Aug 2020 – Dec 2020</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-500 mr-2 mt-1 text-xs"></i> Developed desktop application integrated with SAP for Saudi Aramco</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-500 mr-2 mt-1 text-xs"></i> Created cloud-based monitoring solution using Spring Boot Java</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-orange-500 mr-2 mt-1 text-xs"></i> Followed Agile methodologies for iterative software development</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Reservoir Technologies -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-indigo-300">
+                        <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">Full Stack Software Developer</h4>
+                                <span class="text-indigo-600 font-semibold">Reservoir Technologies, Dammam</span>
+                            </div>
+                            <p class="text-gray-600 font-medium mb-3">May 2017 – Jul 2020</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-indigo-500 mr-2 mt-1 text-xs"></i> Developed bespoke system for key client using VB, C#, MVC, Spring Boot, and SQL Server</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-indigo-500 mr-2 mt-1 text-xs"></i> Successfully launched company website using Angular, enhancing online presence</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-indigo-500 mr-2 mt-1 text-xs"></i> Continuously improved system operability and performance, adding new features</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-indigo-500 mr-2 mt-1 text-xs"></i> Managed and optimized system databases, ensuring data integrity</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-indigo-500 mr-2 mt-1 text-xs"></i> Led UI/UX enhancements across applications, improving user experience</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Themar AlMarifah -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-teal-300">
+                        <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">Full Stack Software Developer</h4>
+                                <span class="text-teal-600 font-semibold">Themar AlMarifah, Qatif</span>
+                            </div>
+                            <p class="text-gray-600 font-medium mb-3">Sep 2016 – Feb 2017</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-teal-500 mr-2 mt-1 text-xs"></i> Provided comprehensive technical support for clients' systems and networks</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-teal-500 mr-2 mt-1 text-xs"></i> Co-developed iOS and Android solutions including Themar EServices app</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-teal-500 mr-2 mt-1 text-xs"></i> Utilized Xamarin framework, Entity Framework, Azure, and SQL Server 2012</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-teal-500 mr-2 mt-1 text-xs"></i> Enhanced and customized POS programs for small business clients</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-teal-500 mr-2 mt-1 text-xs"></i> Presented product demos to key clients including Al Abdulkarim Holding</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Zamil Industrial Investment -->
+                    <div class="timeline-item relative pl-8 pb-8 border-l-2 border-amber-300">
+                        <div class="absolute w-4 h-4 bg-amber-500 rounded-full -left-[9px] top-6"></div>
+                        <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-gray-800">K2 Developer (Internship)</h4>
+                                <span class="text-amber-600 font-semibold">Zamil Industrial, Dammam</span>
+                            </div>
+                            <p class="text-gray-600 font-medium mb-3">Jul 2016 – Aug 2016</p>
+                            <ul class="text-gray-700 space-y-2 text-sm">
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-amber-500 mr-2 mt-1 text-xs"></i> Facilitated transition from Adobe LiveCycle to K2 process support system</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-amber-500 mr-2 mt-1 text-xs"></i> Automated processes for accounts, fund management, customer registration</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-amber-500 mr-2 mt-1 text-xs"></i> Developed forms with integrated workflows for IT engineering and HR</li>
+                                <li class="flex items-start"><i class="fas fa-dot-circle text-amber-500 mr-2 mt-1 text-xs"></i> Streamlined internal workflows and improved process efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <!--Google Map Start-->
-                <div class="google-map">
-                    <div id="map" data-latitude="26.5248108" data-longitude="50.0039492" data-zoom="15"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Key Projects & Achievements</h2>
+                <p class="text-xl text-gray-600">Highlighting significant contributions and successful implementations across various organizations</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Omnichannel Project -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl shadow-lg p-8 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-mobile-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Omnichannel Integration</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Led the end-to-end integration of the Omnichannel Project at BSF, coordinating with multiple stakeholders to define requirements and deliver a comprehensive solution that aligned with business goals.</p>
+                    <div class="bg-white p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Achievements:</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Successfully integrated multiple customer touchpoints into a unified platform</li>
+                            <li>• Implemented Agile methodologies to ensure iterative delivery and continuous improvement</li>
+                            <li>• Reduced customer service response time by 40% through streamlined processes</li>
+                            <li>• Improved customer satisfaction scores by 35% post-implementation</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Agile</span>
+                        <span class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm">CI/CD</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Jira</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Confluence</span>
+                    </div>
                 </div>
-                <!--Google Map End-->
-            </section>
-            <!--Contact Section End-->
 
+                <!-- Cloud Infrastructure -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg p-8 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cloud text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">Cloud Infrastructure Management</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Led the initialization and monitoring of cloud infrastructure at CAMION, ensuring scalability, security, and operational efficiency across the organization's digital ecosystem.</p>
+                    <div class="bg-white p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Achievements:</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Established robust cloud infrastructure on Oracle Cloud Infrastructure (OCI)</li>
+                            <li>• Implemented comprehensive security measures including IAM, WAF, and DR</li>
+                            <li>• Achieved 99.99% system uptime through proactive monitoring and optimization</li>
+                            <li>• Reduced infrastructure costs by 25% through resource optimization</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">OCI</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">Security</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Kubernetes</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Docker</span>
+                    </div>
+                </div>
+
+                <!-- DevOps Implementation -->
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl shadow-lg p-8 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-teal-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">CI/CD & DevOps Implementation</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Applied CI/CD pipelines and DevOps practices at BSF using Jenkins, Nexus, GitLab, and ArgoCD, automating code deployment processes for enhanced efficiency and reliability.</p>
+                    <div class="bg-white p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Achievements:</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Automated 90% of deployment processes, reducing manual errors</li>
+                            <li>• Reduced deployment time from hours to minutes</li>
+                            <li>• Implemented GitOps principles for continuous synchronization of configurations</li>
+                            <li>• Improved code quality through automated testing integration</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Jenkins</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm">GitLab</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">ArgoCD</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">GitOps</span>
+                    </div>
+                </div>
+
+                <!-- SAP Integration -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl shadow-lg p-8 hover-scale">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-orange-600 to-red-500 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cogs text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800">SAP Integration & Automation</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Developed a desktop application integrated with SAP for Saudi Aramco at Tech Mahindra, automating the generation and storage of plant material waste, significantly improving operational efficiency.</p>
+                    <div class="bg-white p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Achievements:</h4>
+                        <ul class="text-sm text-gray-700 space-y-1">
+                            <li>• Automated manual processes that previously took hours to complete</li>
+                            <li>• Reduced data entry errors by 95% through system integration</li>
+                            <li>• Improved reporting accuracy and timeliness for waste management</li>
+                            <li>• Enhanced data security by eliminating manual spreadsheet handling</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">SAP</span>
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">.NET</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">WPF</span>
+                        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">C#</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--Main End-->
+    </section>
 
-    </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Get In Touch</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">I'm always interested in new opportunities, collaborations, and discussions about technology and innovation. Feel free to reach out!</p>
+            </div>
 
-    <!--Ajax Portfolio Container Start-->
-    <div class="ajax-portfolio-popup" data-simplebar>
-        <span class="ajax-loader"></span>
-        <div class="navigation-wrap">
-            <span class="popup-close"><i class="fas fa-times-circle"></i></span>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-phone-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-300">+966-50-386-8474</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-300">jawad.a.almarhoon@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-teal-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-300">Al-Khobar, Saudi Arabia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-r from-orange-600 to-red-500 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <p class="text-gray-300">linkedin.com/in/jawad-almarhoon</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-bold mb-6">Download Resume</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="Jawad_Resume_Technical_Lead.pdf" target="_blank" class="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 rounded-lg flex items-center hover:shadow-lg transition-all">
+                                <i class="fas fa-download mr-3"></i>
+                                Full Resume (PDF)
+                            </a>
+                        </div>
+                        <div class="mt-6">
+                            <img src="img/signature-white.png" alt="Digital Signature" class="signature-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" name="name" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Your name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" name="email" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="your.email@example.com" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" name="subject" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="How can I help?" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="content-wrap">
-            <div class="popup-content"></div>
-        </div>
-    </div>
-    <!--Ajax Portfolio Container End-->
+    </section>
 
-    <!--Jquery JS-->
-    <script src="js/jquery.min.js"></script>
-    <!--Plugins JS-->
-    <script src="js/plugins.min.js"></script>
-    <!--Google Map Api-->
-    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
-    <!--Site Main JS-->
-    <script src="js/main.js"></script>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-pink-500 rounded-lg flex items-center justify-center mr-2">
+                        <span class="text-white font-bold text-sm">J</span>
+                    </div>
+                    <span class="text-white font-bold">Jawad Al Marhoon</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Jawad Al Marhoon. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        //Particles
-        particlesJS.load('particles-js', 'js/particles1.json', function() {
-            console.log('callback - particles.js config loaded');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animation to elements
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hover-scale, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // In a real implementation, you would send this data to your server
+            // For now, we'll just show a success message
+            const form = this;
+            const successMessage = document.createElement('div');
+            successMessage.id = 'successMessage';
+            successMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+            
+            // Remove any existing success message
+            const existingMessage = form.querySelector('#successMessage');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            // Add success message
+            form.appendChild(successMessage);
+            successMessage.style.display = 'block';
+            
+            // Reset form
+            setTimeout(() => {
+                form.reset();
+                successMessage.style.display = 'none';
+            }, 3000);
         });
     </script>
-</body></html>
+</body>
+</html>
