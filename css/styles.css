@@ -1,0 +1,93 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+.gradient-text {
+    background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    margin: 10px 0;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    left: -24px;
+    top: 10px;
+}
+.skill-pill {
+    background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.hover-scale:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+.proficiency-card {
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-left: 4px solid #6366f1;
+}
+.proficiency-card:nth-child(2) {
+    border-left-color: #8b5cf6;
+}
+.proficiency-card:nth-child(3) {
+    border-left-color: #ec4899;
+}
+.proficiency-card:nth-child(4) {
+    border-left-color: #06b6d4;
+}
+.proficiency-card:nth-child(5) {
+    border-left-color: #10b981;
+}
+.proficiency-card:nth-child(6) {
+    border-left-color: #f59e0b;
+}
+.proficiency-card:nth-child(7) {
+    border-left-color: #ef4444;
+}
+.proficiency-card:nth-child(8) {
+    border-left-color: #84cc16;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.signature-img {
+    width: 100%;
+    max-width: 444px;
+    height: 91px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.domain-card {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-left: 4px solid #06b6d4;
+    transition: all 0.3s ease;
+}
+.domain-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.domain-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
