@@ -56,3 +56,16 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         successMessage.style.display = 'none';
     }, 3000);
 });
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('hidden') === false;
+    menuToggle.setAttribute('aria-expanded', isOpen);
+});
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuToggle.setAttribute('aria-expanded', false);
+    });
+});
